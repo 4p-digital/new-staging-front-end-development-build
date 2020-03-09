@@ -91,3 +91,7 @@
 agm-map {
   height: 300px;
 }
+
+.place-card .place-card-large{
+  display: none !important;
+}

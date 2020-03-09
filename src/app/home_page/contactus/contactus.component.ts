@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 
 
-@Component({
+@Component({ 
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.css']

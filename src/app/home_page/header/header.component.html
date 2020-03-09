@@ -1,67 +1,77 @@
-<div class="websiteheader">
-  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top"> -->
+<div class="nav-container" [ngClass]="{
+  'navMenuHide': navPosition == 'true',
+  'navMenuShow': navPosition == 'false'
+}">
+  <div class="websiteheader">
+    <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top"> -->
 
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
 
-    <span class="navbar-brand hamburgerMenu" (click)="openNav();">
-      <img src="assets/img/hamburger-menu.svg" alt="">
-    </span>
 
-    <a class="navbar-brand logo" routerLink="/home">
-      <img src="assets/img/logo.svg" alt="thinkahoy-logo">
-    </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <!-- <span class="navbar-toggler-icon"></span> -->
-      <!-- <img src="assets/img/hamburger-menu.svg" alt=""> -->
+      <a class="navbar-brand logo" routerLink="/home">
+        <img src="assets/img/logo.svg" alt="thinkahoy-logo">
+      </a>
 
-    </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <!-- <img src="assets/img/hamburger-menu.svg" alt=""> -->
 
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-      <ul class="navbar-nav ">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
+      </button>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
-        </li>
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav ">
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
 
-        <li class="nav-item actionBtn" (click)="LoginOpen(Login);">
-          <a class="nav-link">Login</a>
-        </li>
-        <li class="nav-item actionBtn" (click)="open(content)">
-          <a class="nav-link">Register</a>
-      </ul>
-    </div>
-  </nav>
-</div>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+          </li>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
+          </li>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
+          </li>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+          </li>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+          </li>
 
-<!-- Menu overlay start -->
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn sideNavClose" (click)="closeNav();">X</a>
-  <div class="overlay-content">
-    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-    <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
-    <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
-    <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
-    <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+          <li class="nav-item actionBtn" (click)="LoginOpen(Login);">
+            <a class="nav-link">Login</a>
+          </li>
+          <li class="nav-item actionBtn" (click)="open(content)">
+            <a class="nav-link">Register</a>
+        </ul>
+      </div>
+
+      <span class="navbar-brand hamburgerMenu" (click)="openNav();">
+        <img src="assets/img/hamburger-menu.svg" alt="">
+      </span>
+
+    </nav>
   </div>
-</div>
-<!-- Menu overlay end -->
 
+
+  <!-- Menu overlay start -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn sideNavClose" (click)="closeNav();">X</a>
+    <div class="overlay-content">
+      <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+      <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
+      <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
+      <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+    </div>
+  </div>
+  <!-- Menu overlay end -->
+
+
+</div>
 
 <!-- USER REDLE START -->
 <ng-template #content let-modal>

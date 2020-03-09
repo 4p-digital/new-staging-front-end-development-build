@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, HostListener, Inject, ElementRef } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { WINDOW } from '../../window.service'
+
+import { ScrollEvent } from 'ngx-scroll-event';
+
+
+import { from } from 'rxjs';
+
 declare var $: any;
 
 @Component({
@@ -10,8 +18,27 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
   closeResult: string;
-  
-  constructor(private modalService: NgbModal) { }
+  navPosition: string = 'false';
+
+  constructor(
+    private modalService: NgbModal,
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(WINDOW) private window: Window,
+    private el: ElementRef
+  ) { }
+
+
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+    console.log(offset);
+    if (offset >= 300) {
+      this.navPosition = 'true';
+    } else {
+      this.navPosition = 'false';
+    }
+  }
 
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -86,7 +113,11 @@ export class HeaderComponent implements OnInit {
     document.getElementById('myNav').style.width = '0%';
   }
 
+
+
+
   ngOnInit(): void {
+
   }
 
 }

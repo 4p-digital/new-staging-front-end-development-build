@@ -1,10 +1,12 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ApiService } from './api.service';
+import { WINDOW_PROVIDERS } from './window.service';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
-
+import { ScrollEventModule } from 'ngx-scroll-event';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ import { PrivacyPolicyComponent } from './home_page/privacy-policy/privacy-polic
 import { BlogComponent } from './home_page/blog/blog.component';
 import { FaqComponent } from './home_page/faq/faq.component';
 import { ContactusComponent } from './home_page/contactus/contactus.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -56,6 +59,7 @@ import { ContactusComponent } from './home_page/contactus/contactus.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ScrollEventModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
@@ -65,7 +69,9 @@ import { ContactusComponent } from './home_page/contactus/contactus.component';
     })
   ],
   providers: [
-    Title
+    Title,
+    ApiService,
+    WINDOW_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
