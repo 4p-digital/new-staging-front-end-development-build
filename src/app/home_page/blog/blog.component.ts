@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { from } from 'rxjs';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -8,37 +10,32 @@ import { from } from 'rxjs';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private myservice: ApiService) { }
+  public isCollapsed = false;
 
-  GenresWiseAnalyticsA = [];
-  GenresWiseAnalyticsB = [];
-  GenresWiseAnalyticsC = [];
-  GenresWiseAnalyticsD = [];
-  GenresWiseAnalyticsE = [];
+  constructor(private myservice: ApiService,private titleService: Title) { }
 
+  mediumblogs_article = [];
 
-  getGenresWiseAnalyticsTableGraph = () => {
-    this.myservice.getAllGenresWiseAnalyticsGraph().subscribe(
+  mediumblogs_articleGet = () => {
+    this.myservice.mediumblogs_article_service().subscribe(
       data => {
-        this.GenresWiseAnalyticsB = data.aggregations.events.buckets;
-        for (let i = 0; i < this.GenresWiseAnalyticsB.length; i++) {
-          this.GenresWiseAnalyticsC = this.GenresWiseAnalyticsB[i].historgram.buckets;
-          for (let j = 0; j < this.GenresWiseAnalyticsC.length; j++) {
-            this.GenresWiseAnalyticsD.push(
-              {
-                // year: moment(this.GenresWiseAnalyticsC[j].key_as_string).format('MMM'),
-                // value: this.GenresWiseAnalyticsC[j].total.value
-              }
-            );
-          }
-        }
+        console.log(data);
+        this.mediumblogs_article = data
+        // for (let i = 0; i < this.GenresWiseAnalyticsB.length; i++) {
+        //   this.GenresWiseAnalyticsC = this.GenresWiseAnalyticsB[i].historgram.buckets;
+        // }
       },
       error => {
-        console.log(error + ' Error getGenresWiseAnalyticsTableGraph');
+        console.log(error + ' Error mediumblog');
       }
     );
   }
+
+
+
   ngOnInit(): void {
+    this.titleService.setTitle('Our Partners');
+    this.mediumblogs_articleGet();
   }
 
 }

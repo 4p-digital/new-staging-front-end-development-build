@@ -1,8 +1,13 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { FormsModule, FormBuilder } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { ApiService } from './api.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 import { WINDOW_PROVIDERS } from './window.service';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
@@ -32,6 +37,15 @@ import { BlogComponent } from './home_page/blog/blog.component';
 import { FaqComponent } from './home_page/faq/faq.component';
 import { ContactusComponent } from './home_page/contactus/contactus.component';
 import { from } from 'rxjs';
+import { OurPartnersComponent } from './blog/our-partners/our-partners.component';
+import { BusinessComponent } from './blog/business/business.component';
+import { TechnologyComponent } from './blog/technology/technology.component';
+import { EntrepreneurComponent } from './blog/entrepreneur/entrepreneur.component';
+import { AuthService } from './auth.service';
+import { UserprofileComponent } from './userdash/userprofile/userprofile.component';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
+
 
 
 @NgModule({
@@ -55,14 +69,24 @@ import { from } from 'rxjs';
     BlogComponent,
     FaqComponent,
     ContactusComponent,
+    OurPartnersComponent,
+    BusinessComponent,
+    TechnologyComponent,
+    EntrepreneurComponent,
+    UserprofileComponent,
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     ScrollEventModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
+    Ng2SearchPipeModule,
     ScrollToModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDCmDnWPXKL0ZeIyYhtqPz31-UgaWOn1mM'
@@ -71,7 +95,16 @@ import { from } from 'rxjs';
   providers: [
     Title,
     ApiService,
-    WINDOW_PROVIDERS
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    NgbModal,
+    WINDOW_PROVIDERS,
+    FormBuilder
   ],
   bootstrap: [AppComponent]
 })

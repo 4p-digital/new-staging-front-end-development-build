@@ -2,12 +2,343 @@
 html,
 body {
   font-family: 'Raleway', sans-serif !important;
+  overflow-x: hidden;
+}
+
+.overlay-content {
+  margin-top: 70px;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 75px;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  box-shadow: -5px 0px 14px 6px #0000005e;
+}
+
+.overla y-content {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.overlay a {
+  padding: 10px 0px 10px 25px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #423939;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-bottom: 1px solid #d76b4f2e;
+  font-weight: bold;
+}
+
+.overlay a:hover,
+.overlay a:focus,
+.overlay a.active {
+  color: #d76b4f;
+  background-color: #423939;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 25px;
+  background-color: #423939;
+  border-radius: 100%;
+  padding: 0px 10px 0px 10px;
+  box-shadow: 0px 2px 3px 2px #00000024;
+  color: #d76b4f;
+}
+
+.overlay .closebtn:hover {
+  color: #d76b4f;
+}
+
+.navMenuHide .overlay,
+.navMenuHide .hamburgerMenu {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+  display: none;
+}
+
+.navMenuShow .navhidehelper {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+  display: none;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.video-background {
+  background: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#vidtop-content {
+  top: 0;
+  color: #fff;
+}
+
+.vid-info {
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 1rem;
+  font-family: Avenir, Helvetica, sans-serif;
+}
+
+.vid-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.vid-info a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  transition: .6s background;
+  border-bottom: none;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .vid-info {
+    width: 50%;
+    padding: .5rem;
+  }
+
+  .vid-info h1 {
+    margin-bottom: .2rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .vid-info .acronym {
+    display: none;
+  }
+}
+
+
+/* Mycss start */
+#Banner {
+  background-color: #000;
+}
+
+.VideoBanner iframe {
+  width: 100%;
+  height: 100vh;
+}
+
+
+#bannerUnmute {
+  background-color: transparent;
+  border: 0px;
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+#bannerUnmute img {
+  width: 60px;
+  opacity: 0.5;
+}
+
+#bannerUnmute img:hover {
+  opacity: 1;
+}
+
+
+.whatIsThinkAhoy_body {
+  padding: 100px 30px;
+}
+
+.whatIsThinkAhoy_img img {
+  width: 80%;
+  border-radius: 3px;
+  display: block;
+  margin: 0 auto;
+}
+
+.whatIsThinkAhoy_right {
+  background-color: #ffffff57;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.whatIsThinkAhoy_right h2 {
+  color: #25292D;
+}
+
+.whatIsThinkAhoy_right p {
+  text-align: justify;
+}
+
+
+.TheThinkAhoyMission_body {
+  padding: 100px 20px;
+}
+
+.TheThinkAhoyMission_title h2 {
+  padding-top: 40px;
+}
+
+.TheThinkAhoyMission_text1 p {
+  text-align: justify;
+}
+
+.JoinhandsinThinkAhoymission_title h2 {
+  text-align: center;
+
+}
+
+
+.JoinhandsinThinkAhoymission_card .JoinhandsinThinkAhoymission_numbers {
+  color: #DF8C76;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0px;
+  margin: 0px;
+  font-size: 35px;
+}
+
+.JoinhandsinThinkAhoymission_card .JoinhandsinThinkAhoymission_details {
+  text-align: center;
+}
+
+.JoinhandsinThinkAhoymission_title {
+  padding: 60px 0px;
+}
+
+.JoinhandsinThinkAhoymission_card {
+  padding: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.JoinhandsinThinkAhoymission_card:hover {
+  padding: 10px;
+  border: 1px solid #ffe2e2;
+  border-radius: 4px;
+}
+
+.videoContainer video {
+  width: 100%;
+  height: auto;
+}
+
+.goDown {
+  position: absolute;
+  left: 50%;
+  z-index: 99;
+  bottom: 0%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 6px 2px;
+  border-radius: 4px;
+}
+
+.goDown img {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+.goDown:hover {
+  background-color: #d76b4f;
+}
+
+.goDown:hover img {
+  opacity: 1;
+}
+
+#owlCarouselSection {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin-top: 5%;
+}
+
+#owlCarouselSection img {
+  width: 80%;
+}
+
+.carousel_body {
+  margin-top: 5%;
+  border-bottom: 0.5px solid #0c0c0c17;
 }
 
 .websiteheader .nav-link {
   font-size: 14px;
 }
-
 
 .modal-content {
   background-color: #fff0 !important;
@@ -37,6 +368,7 @@ body {
   background: linear-gradient(#ff5858 0%, #f09819 100%);
   padding: 0px 30px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .actionBtn .nav-link {
@@ -126,7 +458,7 @@ body {
   color: #fff;
   background-color: #635b5b;
   border-color: #948e8e;
-  padding: 15px 0px;
+  padding: 10px 0px;
 }
 
 .model_btn_group .btn:hover {
@@ -231,4 +563,218 @@ body {
   width: 100% !important;
   margin: 0 auto !important;
   max-width: 48% !important;
+}
+
+
+/* Blog css start */
+
+#blog_section {
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.blog_nav .Title {
+  border-bottom: 1px solid #0000003d;
+}
+
+
+.blog_nav {
+  background-color: #f9f9f9;
+  padding: 10px 0 10px 0px;
+}
+
+
+.blog_nav .Title {
+  font-weight: bold;
+  font-size: 14px !important;
+}
+
+.blog_nav .nav-link {
+  font-size: 13px;
+  text-align: left;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.blog_nav .nav-link:hover {
+  background-color: #fff;
+}
+
+.blog_nav .nav-link.active {
+  background-color: #fff;
+}
+
+.blog_nav .nav-link i {
+  color: #b9b8b8;
+}
+
+.blog_nav .nav-link.active i {
+  font-size: 12px;
+  color: #d76b4f;
+}
+
+
+.blog_card h2 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.blog_card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+.blog_card a {
+  font-size: 14px;
+  color: #d76b4f;
+}
+
+.blog_card img {
+  border-radius: 4px;
+  height: 250px;
+  width: 100%;
+}
+
+.blog_card {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.blog_card:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 0 1px 1px #00000024;
+}
+
+.blog_right .media {
+  padding: 10px;
+}
+
+.blog_right .media img {
+  width: 60px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 1px 1px #00000080;
+}
+
+.blog_right .media-body p {
+  font-size: 12px;
+  margin: 0px;
+}
+
+
+.blog_right .media-body .dayAge {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.blog_post h2 {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.errorMsgLogin {
+  color: #ff0000 !important;
+  font-size: 12px;
+  /* background-color: antiquewhite; */
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+#whatIsThinkAhoy {
+  position: relative;
+}
+
+
+#whatIsThinkAhoy::after {
+  background-image: url('../src/assets/img/side-gradient.jpg');
+  position: absolute;
+  content: "";
+  width: 160px;
+  height: 100%;
+  right: 0px;
+  background-color: #7fffd400;
+  bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+#TheThinkAhoyMission {
+  position: relative;
+}
+
+#TheThinkAhoyMission::after {
+  background-image: url('../src/assets/img/left-side-gradient.jpg');
+  position: absolute;
+  content: "";
+  width: 160px;
+  height: 100%;
+  left: 0px;
+  background-color: #7fffd400;
+  bottom: 0px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+.JoinhandsinThinkAhoymission {
+  border-top: 1px solid #ccc;
+}
+
+
+#blog_section {
+  background-image: url('./assets/img/blog/line-bg.svg');
+}
+
+
+.faq_tabs_body .card-header {
+  padding: 5px 0 !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-bottom: 0px solid rgba(0, 0, 0, .125) !important;
+}
+
+.faq_tabs_body .card-header .btn {
+  color: #d76b4f !important;
+  font-weight: bold !important;
+}
+
+.faq_tabs_body .card {
+  margin-bottom: 5px !important;
+}
+
+
+.emailerror {
+  color: red !important;
+  background-color: #d0d0d0;
+  border-radius: 3px;
+  font-weight: bold;
+  animation: blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    color: red !important;
+  }
+
+  49% {
+    color: red !important;
+  }
+
+  60% {
+    color: red !important;
+  }
+
+  99% {
+    color: transparent;
+  }
+
+  100% {
+    color: red !important;
+  }
 }

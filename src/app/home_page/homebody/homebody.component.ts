@@ -18,18 +18,23 @@ export class HomebodyComponent implements OnInit {
 
   customOptions: any = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    autoplay: true,
+    autoplayHoverPause:true,
+    mouseDrag:true,
+    touchDrag: true,
     pullDrag: false,
+    slideTransition:'linear',
     dots: false,
-    navSpeed: 700,
+    navSpeed: 500,
     navText: ['<', '>'],
     responsive: {
       0: {
-        items: 1
+        items: 1,
+        nav:false
       },
       400: {
-        items: 1
+        items: 1,
+        nav:false
       },
       740: {
         items: 1
@@ -41,7 +46,7 @@ export class HomebodyComponent implements OnInit {
     nav: true
   };
 
-  // 
+  //
 
 
 
@@ -58,19 +63,6 @@ export class HomebodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('thinkAhoy');
-
-    $('.count').each(() => {
-      $(this).prop('Counter', 0).animate({
-        Counter: $(this).text()
-      }, {
-        duration: 4000,
-        easing: 'swing',
-        step: (now) => {
-          $(this).text(Math.ceil(now));
-        }
-      });
-    });
-
   }
 
   // videobanner_model
@@ -92,6 +84,7 @@ export class HomebodyComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
   BannerVidPlayPause = () => {
     const myVideo = $('#video');
     if (myVideo.get(0).muted) {

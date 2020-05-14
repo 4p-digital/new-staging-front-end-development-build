@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ourservices',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurservicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Our Services');
   }
 
+  clickedOnLogo() {
+    // window.scroll(0,0);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 }

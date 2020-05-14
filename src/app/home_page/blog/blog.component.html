@@ -6,161 +6,61 @@
   <div class="blog_body">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="blog_nav">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link Title">Categories</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active"><i class="fas fa-circle"></i> Business</a>
+                <a class="nav-link active" routerLink="/blog/our-partners" routerLinkActive="active"><i
+                    class="fas fa-circle"></i> Our Partners</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Arts</a>
+                <a class="nav-link" routerLink="/blog/business" routerLinkActive="active"><i class="fas fa-circle"></i>
+                  Business</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Emotional States</a>
+                <a class="nav-link" routerLink="/blog/technology" routerLinkActive="active"><i
+                    class="fas fa-circle"></i> Technology</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Habits</a>
+                <a class="nav-link" routerLink="/blog/entrepreneur" routerLinkActive="active"><i
+                    class="fas fa-circle"></i> Entrepreneur</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Arts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Emotional States</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"><i class="fas fa-circle"></i> Habits</a>
-              </li>
+
             </ul>
           </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-9">
           <div class="blog_post">
 
             <div class="container">
               <div class="row">
 
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
+                <div class="col-md-6" *ngFor="let attachment of mediumblogs_article;">
+                  <div class="blog_card" id="collapseExample">
+
+                    <p>{{attachment.pubdate | date:'dd/MM/yyyy'}}</p>
+
+                    <img src="{{attachment.article_img}}" class="img-fluid mx-auto d-block" alt="{{attachment.title}}">
+                    <h2>{{attachment.title}}</h2>
+                    <p>{{attachment.article_desc}}</p>
+                    <a href="{{attachment.link}}" target="_blank">More...</a>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
-                  </div>
-                </div>
-
-
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
-                  </div>
-                </div>
-
-
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
-                  </div>
-                </div>
-
-
-                <div class="col-md-6">
-                  <div class="blog_card">
-                    <h2>Strating a Business in Dubai!</h2>
-                    <img src="assets/img/blog/blog-img.svg" class="img-fluid mx-auto d-block" alt="">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <a href="#">More...</a>
-                  </div>
-                </div>
 
               </div>
             </div>
 
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="blog_nav blog_right">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link Title">Popular Posts</a>
-              </li>
-  
-              <div class="media">
-                <img src="assets/img/blog/blog-img.svg" class="align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                  <p class="dayAge">5 days ago</p>
-                </div>
-              </div>
-              <div class="media">
-                <img src="assets/img/blog/blog-img.svg" class="align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                  <p class="dayAge">5 days ago</p>
-                </div>
-              </div>
-              <div class="media">
-                <img src="assets/img/blog/blog-img.svg" class="align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                  <p class="dayAge">5 days ago</p>
-                </div>
-              </div>
-              <div class="media">
-                <img src="assets/img/blog/blog-img.svg" class="align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                  <p class="dayAge">5 days ago</p>
-                </div>
-              </div>
-              <div class="media">
-                <img src="assets/img/blog/blog-img.svg" class="align-self-start mr-3" alt="">
-                <div class="media-body">
-                  <p>Cras sit amet nibh libero, in gravida nulla.</p>
-                  <p class="dayAge">5 days ago</p>
-                </div>
-              </div>
-            </ul>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
-
 </section>
-
 
 <!-- FOOTER START  -->
 <app-footer></app-footer>

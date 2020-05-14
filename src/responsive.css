@@ -1,0 +1,393 @@
+/* media query start */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  .logo img {
+    width: 130px !important;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .carousel_body {
+    margin-top: 24%;
+  }
+
+  .whatIsThinkAhoy_body {
+    padding: 10px 5px;
+  }
+
+  .whatIsThinkAhoy_right {
+    padding-top: 30px;
+  }
+
+  .whatIsThinkAhoy_right h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .whatIsThinkAhoy_right p {
+    font-size: 14px;
+  }
+
+  .TheThinkAhoyMission_body {
+    padding: 10px 10px;
+  }
+
+  .TheThinkAhoyMission_title h2 {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .TheThinkAhoyMission_text1 p {
+    font-size: 14px;
+  }
+
+  .JoinhandsinThinkAhoymission_title {
+    padding: 10px 0px;
+  }
+
+  .JoinhandsinThinkAhoymission_title h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .JoinhandsinThinkAhoymission_card {
+    padding: 10px;
+    border: 1px solid #00000017;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+
+  .JoinhandsinThinkAhoymission_card .JoinhandsinThinkAhoymission_numbers {
+    padding: 10px 0px;
+    font-size: 35px;
+  }
+
+  .JoinhandsinThinkAhoymission_card .JoinhandsinThinkAhoymission_details {
+    font-size: 14px;
+  }
+
+  .footer_top_logo img {
+    padding-top: 7% !important;
+    margin-bottom: 10px;
+  }
+
+  .footer_menuTitle {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .footer_menus .nav-link {
+    padding: 4px 0 !important;
+    font-size: 14px;
+  }
+
+  .subscre {
+    padding-right: 0% !important;
+    margin-top: 5%;
+  }
+
+  .footer-top-cons::after {
+    display: none;
+  }
+
+  #footer_bottom {
+    padding: 10px 0 10px 0 !important;
+  }
+
+  .copyright p {
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  .subscre input {
+    border-color: #00000094;
+    font-size: 12px;
+  }
+
+  .subscre .input-group-text {
+    background-color: #00000094;
+    border: 1px solid #00000094;
+    font-size: 12px;
+  }
+
+  .footer_bottom img {
+    width: 15px;
+  }
+
+  .homepageModels .modal-body {
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .homepageModels .modelinside {
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .modelinside h2 {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  .modelinside h3 {
+    font-size: 14px;
+  }
+
+  .modelinside p {
+    font-size: 12px;
+  }
+
+  .modelinside .close {
+    padding: 0px 6px 5px 6px;
+  }
+
+  .register_btn {
+    padding: 6px 10px !important;
+    margin-right: 10px;
+    width: 40% !important;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .model_btn_group .btn {
+    font-size: 12px;
+  }
+
+  .actionBtn {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #aboutus {
+    margin-top: 15%;
+  }
+
+  #OurCulture::after {
+    display: none;
+  }
+
+  .aboutus_first {
+    position: relative !important;
+    left: 0 !important;
+    background-color: #4239390a !important;
+    width: 100% !important;
+    padding: 5px !important;
+    top: 3% !important;
+    border-radius: 4px !important;
+  }
+
+  .about_before h2 {
+    font-size: 16px !important;
+    margin-top: 10px;
+  }
+
+  .about_before p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .aboutus_second p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .OurCulturebody {
+    margin-top: 2% !important;
+  }
+
+  #OurCulture {
+    border-top: 3px solid #42393938;
+    border-bottom: 3px solid #42393938;
+  }
+
+  .OurCulturebody p {
+    font-size: 14px !important;
+  }
+
+  .contactus_body {
+    width: 100% !important;
+    display: block;
+    margin: 0 auto;
+    position: unset !important;
+    background-color: white;
+    -webkit-transform: unset !important;
+    transform: unset !important;
+    left: unset !important;
+  }
+
+  .contact_form {
+    text-align: center;
+  }
+
+  .contact_address {
+    padding: 15px 10px !important;
+  }
+
+  .contact_address h2 {
+    margin-bottom: 10px !important;
+  }
+
+  #contactus {
+    margin-top: 23.4% !important;
+    margin-bottom: 5% !important;
+  }
+
+  .contact_form[_ngcontent-gpq-c139] .btn[_ngcontent-gpq-c139] {
+    padding: 5px 50px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .blog_card img {
+    height: 160px;
+  }
+
+  .blog_post h2 {
+    padding-left: 0px;
+    font-size: 14px;
+    border-bottom: 0px solid #e0e0e0;
+  }
+
+  .blog_card p {
+    font-size: 12px;
+  }
+
+  .blog_card a {
+    font-size: 12px;
+    display: block;
+  }
+
+  .ourservice_container {
+    margin-left: 0% !important;
+  }
+
+  .ourServiceFirstLine {
+    margin-left: 0px !important;
+  }
+
+  .ourservice_img_card-last {
+    margin-top: 5% !important;
+  }
+
+  #ourservice {
+    margin-bottom: 10px !important;
+  }
+
+  .ourservice_leftside::after {
+    display: none !important;
+  }
+
+  .ourservice_leftside {
+    padding: 40px 10px 10px 10px !important;
+  }
+
+  #termsconditions {
+    margin-top: 25% !important;
+    padding: 15px !important;
+  }
+
+  .termsconditions_body p {
+    font-size: 13px !important;
+  }
+
+  .termsconditions_body h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .table_section .table-bordered td,
+  .table-bordered th {
+    font-size: 10px;
+  }
+
+  .ourservice_details::after {
+    display: none;
+  }
+
+  #ourservice_inside_page {
+    margin-top: 18%;
+  }
+
+  .ourservice_details {
+    padding: 20px 0 0px 0;
+  }
+
+  .ourservice_container_text p {
+    margin-top: 5%;
+  }
+
+  .detailed_modle {
+    margin-left: 0%;
+  }
+
+  .detailed {
+    margin-bottom: 20px;
+  }
+
+  #faq_main {
+    margin-top: 30% !important;
+  }
+
+  .faq_search {
+    width: 95% !important;
+  }
+
+  .faq_new_nav .nav {
+    display: block !important;
+  }
+
+  .faq_new_nav .nav-pills .nav-link.active {
+    background-color: #d76b4f1a !important;
+  }
+
+  #blog_section {
+    margin-top: 25%;
+  }
+
+  .blog_post {
+    margin-top: 30px;
+  }
+
+  .vid_banner iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .vid_banner .modal-body {
+    padding: 0.2rem !important;
+  }
+
+  .whatIsThinkAhoy_img img {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .MEETOURTEAM {
+    overflow: hidden;
+  }
+
+  .team_overly {
+    width: 50% !important;
+    height: 100% !important;
+    top: 50% !important;
+    border-radius: 100% !important;
+    text-align: center !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    left: 50% !important;
+  }
+}
+
+/* Responseive end */

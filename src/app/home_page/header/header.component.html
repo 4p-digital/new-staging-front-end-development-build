@@ -1,51 +1,58 @@
-<div class="nav-container" [ngClass]="{
-  'navMenuHide': navPosition == 'true',
-  'navMenuShow': navPosition == 'false'
-}">
+<div class="nav-container" [ngClass]="{'navMenuHide': navPosition == 'true','navMenuShow': navPosition == 'false'}">
   <div class="websiteheader">
     <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top"> -->
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
 
-
-
-      <a class="navbar-brand logo" routerLink="/home">
+      <a class="navbar-brand logo" routerLink="/home" (click)="clickedOnLogo();">
         <img src="assets/img/logo.svg" alt="thinkahoy-logo">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <!-- <span class="navbar-toggler-icon"></span> -->
-        <!-- <img src="assets/img/hamburger-menu.svg" alt=""> -->
+        <img src="assets/img/hamburger-menu.svg" alt="">
 
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav ">
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/home" routerLinkActive="active" (click)="clickedOnLogo();">Home</a>
           </li>
 
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+            <a class="nav-link" routerLink="/aboutus" routerLinkActive="active" (click)="clickedOnLogo();">About Us</a>
           </li>
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
+            <a class="nav-link" routerLink="/ourservice" routerLinkActive="active" (click)="clickedOnLogo();">Our
+              Services</a>
           </li>
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
+            <a class="nav-link" routerLink="/faq" routerLinkActive="active" (click)="clickedOnLogo();">FAQ's</a>
           </li>
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+            <a class="nav-link" routerLink="/blog" routerLinkActive="active" (click)="clickedOnLogo();">Blog</a>
           </li>
           <li class="nav-item navhidehelper">
-            <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+            <a class="nav-link" routerLink="/contactus" routerLinkActive="active" (click)="clickedOnLogo();">Contact
+              Us</a>
           </li>
 
-          <li class="nav-item actionBtn" (click)="LoginOpen(Login);">
-            <a class="nav-link">Login</a>
+          <li class="nav-item navhidehelper">
+            <a class="nav-link" routerLink="/userprofile" routerLinkActive="active" (click)="clickedOnLogo();">User
+              Profile test</a>
           </li>
-          <li class="nav-item actionBtn" (click)="open(content)">
+
+
+          <li *ngIf="!_auth.loggedIn()" class="nav-item actionBtn" (click)="LoginOpen(Login);">
+            <a class="nav-link">LogIn</a>
+          </li>
+          <li *ngIf="!_auth.loggedIn()" class="nav-item actionBtn" (click)="open(content)">
             <a class="nav-link">Register</a>
+          </li>
+          <li *ngIf="_auth.loggedIn()" class="nav-item actionBtn" (click)="logOut()">
+            <a class="nav-link">LogOut </a>
+          </li>
         </ul>
       </div>
 
@@ -61,11 +68,12 @@
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn sideNavClose" (click)="closeNav();">X</a>
     <div class="overlay-content">
-      <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-      <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
-      <a class="nav-link" routerLink="/ourservice" routerLinkActive="active">Our Service</a>
-      <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ's</a>
-      <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+      <a class="nav-link" routerLink="/home" routerLinkActive="active" (click)="clickedOnLogo();">Home</a>
+      <a class="nav-link" routerLink="/aboutus" routerLinkActive="active" (click)="clickedOnLogo();">About Us</a>
+      <a class="nav-link" routerLink="/ourservice" routerLinkActive="active" (click)="clickedOnLogo();">Our Services</a>
+      <a class="nav-link" routerLink="/faq" routerLinkActive="active" (click)="clickedOnLogo();">FAQ's</a>
+      <a class="nav-link" routerLink="/blog" routerLinkActive="active" (click)="clickedOnLogo();">Blog</a>
+      <a class="nav-link" routerLink="/contactus" routerLinkActive="active" (click)="clickedOnLogo();">Contact Us</a>
     </div>
   </div>
   <!-- Menu overlay end -->
@@ -73,7 +81,7 @@
 
 </div>
 
-<!-- USER REDLE START -->
+<!-- USER REGISTER START -->
 <ng-template #content let-modal>
   <div class="homepageModels">
     <div class="modal-body">
@@ -90,6 +98,7 @@
             PROVIDER</button>
           <button type="button" class="btn btn-primary" (click)="MentorOpen(Mentor);modal.close('Save click')">REGISTER
             AS MENTOR</button>
+
           <button type="button" class="btn btn-primary"
             (click)="InvestorOpen(Investor);modal.close('Save click')">REGISTER AS INVESTOR</button>
           <p>Already have an account !<a (click)="LoginOpen(Login);modal.close('Save click')">LOGIN</a></p>
@@ -100,7 +109,7 @@
 </ng-template>
 <!-- USER REGISTER MODLE END -->
 
-<!-- Entreprneur MODLE START -->
+<!-- Entreprneur MODLE START raghu-->
 <ng-template #EntreprneurModel let-modal>
   <div class="homepageModels">
     <div class="modal-body">
@@ -110,34 +119,44 @@
         <p>Grow with your business, and be the best Entrepreneur</p>
         <div class="model_btn_group">
 
-          <form>
+          <form #f="ngForm" (ngSubmit)="EntreprneurRegister(f)" novalidate>
+
             <div class="form-group">
-              <label for="FirstName">First Name</label>
-              <input type="text" class="form-control" placeholder="Enter First Name" id="FirstName">
+              <label for="">First Name</label>
+              <input type="text" [(ngModel)]="ENname" name="name" class="form-control" placeholder="Enter First Name"
+                required>
             </div>
+
             <div class="form-group">
-              <label for="LastName">Last Name</label>
-              <input type="text" class="form-control" placeholder="Enter Last Name" id="LastName">
+              <label for="">Last Name</label>
+              <input type="text" [(ngModel)]="lastname" name="lastname" class="form-control"
+                placeholder="Enter Last Name">
             </div>
+
             <div class="form-group">
-              <label for="EmailID">Email ID</label>
-              <input type="email" class="form-control" placeholder="Enter Email ID" id="EmailID">
+              <label for="">Email ID</label>
+              <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter Email ID"
+                required>
             </div>
+
             <div class="form-group">
-              <label for="Password">Password</label>
-              <input type="password" class="form-control" placeholder="Enter Password" id="Password">
+              <label for="">Password</label>
+              <input type="password" [(ngModel)]="password" name="password" class="form-control"
+                placeholder="Enter Password" required>
             </div>
-            <div class="form-group">
-              <label for="ConfirmPassword">Confirm Password</label>
-              <input type="password" class="form-control" placeholder="Enter Confirm Password" id="ConfirmPassword">
-            </div>
+
+            <!-- <div class="form-group">
+              <label for="">Confirm Password</label>
+              <input type="password" [(ngModel)]="CnfPassword" name="CnfPassword" class="form-control" placeholder="Enter Confirm Password" id="CnfPassword">
+            </div> -->
+
             <div class="register_btn_group">
+              <p class="emailerror" *ngIf="emailError">{{emailError}}</p>
               <button type="submit" class="btn btn-primary register_btn">REGISTER</button>
             </div>
             <p>By signing up, you agree with our <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></p>
             <p>Already have an account !<a (click)="LoginOpen(Login);modal.close('Save click')">LOGIN</a></p>
           </form>
-
         </div>
       </div>
     </div>
@@ -287,7 +306,7 @@
 
 
 
-<!-- Login MODLE START -->
+<!-- Login MODLE START raghu2 -->
 <ng-template #Login let-modal>
   <div class="homepageModels">
     <div class="modal-body">
@@ -296,20 +315,26 @@
         <h2>Login</h2>
         <h3>Welcome back!</h3>
         <p>Please login to your account.</p>
+
         <div class="model_btn_group">
-          <form>
+          <form #Lg="ngForm" (ngSubmit)="login(Lg)">
             <div class="form-group">
-              <label for="EmailID">Username</label>
-              <input type="email" class="form-control" placeholder="Enter Username" id="Username">
+              <label for="">Username</label>
+              <input type="email" [(ngModel)]="email" name="email" class="form-control " placeholder="Enter Username"
+                id="Username" required>
             </div>
             <div class="form-group">
-              <label for="Password">Password</label>
-              <input type="password" class="form-control" placeholder="Enter Password" id="Password">
+              <label for="">Password</label>
+              <input type="password" [(ngModel)]="password" name="password" class="form-control"
+                placeholder="Enter Password" required>
             </div>
 
             <div class="forgotpass">
-              <p>Forget your password</p>
+              <p (click)="forgotPassModel(ForgotPassword);modal.close('Save click')">Forget your password</p>
             </div>
+
+            <p class="emailerror">{{loginErrorMsg}}</p>
+
             <div class="register_btn_group">
               <button type="submit" class="btn btn-primary register_btn">Login</button>
             </div>
@@ -321,3 +346,34 @@
   </div>
 </ng-template>
 <!-- Login MODLE END -->
+
+
+<!-- FORGOT PASSWROD START -->
+<ng-template #ForgotPassword let-modal>
+  <div class="homepageModels">
+    <div class="modal-body">
+      <div class="modelinside">
+        <span class="close" (click)="modal.close('Save click')">x</span>
+        <h2>Reset Password</h2>
+        <p>Please enter your email address and we'll send you a link to reset your password.</p>
+        <div class="model_btn_group">
+          <form #Lg="ngForm" (ngSubmit)="forgotPassword(Lg)">
+            <div class="form-group">
+              <label for="">Email</label>
+              <input type="email" [(ngModel)]="email" name="email" class="form-control " placeholder="Enter Username"
+                id="Username" required>
+            </div>
+
+            <p class="emailerror">{{loginErrorMsg}}</p>
+
+            <div class="register_btn_group">
+              <button type="submit" class="btn btn-primary register_btn">Submint</button>
+            </div>
+            <p>Don't have an account?<a (click)="open(content);modal.close('Save click')">REGISTER</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- FORGOT PASSWROD END -->

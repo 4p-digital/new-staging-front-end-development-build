@@ -5,6 +5,8 @@
 #OurCulture {
   border-top: 5px solid #38323d;
   border-bottom: 5px solid #38323d;
+  padding-bottom: 40px;
+  overflow: hidden;
 }
 
 .OurCulturebody h2 {
@@ -17,7 +19,7 @@
 }
 
 .OurCulturebody {
-  margin-top: 37%;
+  margin-top: 78%;
 }
 
 .about_before h2 {
@@ -65,12 +67,66 @@
   background-image: url('../../../assets/img/color-bg.png');
   position: absolute;
   content: "";
-  width: 160px;
+  width: 145px;
   height: 100%;
   right: 0px;
   background-color: #7fffd400;
   bottom: 0px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  z-index: 20;
+  z-index: -1;
+}
+
+.team_overly {
+  display: none;
+  background-color: #f9f9f9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 100%;
+  text-align: center;
+  border: 1px dashed #d76b4f;
+}
+
+
+.team_main {
+  position: relative;
+  padding: 10px;
+}
+
+.team_overly p {
+  margin-top: 60px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.team_main:hover .team_overly {
+  display: block;
+}
+
+.team_img img {
+  border-radius: 100%;
+  border: 2px solid #423939;
+}
+
+
+.MEETOURTEAM_img h2{
+  text-align: center;
+  margin: 40px 0;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.team_main::after{
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 130vh;
+  right: 50%;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+  top: -262px;
 }

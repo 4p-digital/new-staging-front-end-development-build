@@ -1,0 +1,63 @@
+<!-- HEADER START -->
+<app-header></app-header>
+<!-- HEADER END -->
+
+<section id="blog_section">
+  <div class="blog_body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="blog_nav">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link Title">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/blog/our-partners" routerLinkActive="active">
+                  <i class="fas fa-circle"></i> Our Partners</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/blog/business" routerLinkActive="active">
+                  <i class="fas fa-circle"></i>
+                  Business</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/blog/technology" routerLinkActive="active">
+                  <i class="fas fa-circle"></i> Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/blog/entrepreneur" routerLinkActive="active">
+                  <i class="fas fa-circle"></i> Entrepreneur</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="blog_post">
+            <h2>Business</h2>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-md-6" *ngFor="let mediumblog of business_article">
+                  <div class="blog_card">
+                    <p>{{mediumblog.pubdate | date:'dd/MM/yyyy'}}</p>
+                    <img src="{{mediumblog.article_img}}" class="img-fluid mx-auto d-block" alt="{{mediumblog.title}}">
+                    <h2>{{mediumblog.title}}</h2>
+                    <p>{{mediumblog.article_desc}}</p>
+                    <a href="{{mediumblog.link}}" target="_blank">More...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER START  -->
+<app-footer></app-footer>
+<!-- FOOTER END  -->

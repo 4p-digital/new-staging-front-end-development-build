@@ -13,13 +13,10 @@
   </div> -->
 
 
-  <iframe
-  width="100%"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDCmDnWPXKL0ZeIyYhtqPz31-UgaWOn1mM
-    &q=13.3230,76.8568&zoom=12" allowfullscreen>
-</iframe>
+  <iframe width="100%" height="450" frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDCmDnWPXKL0ZeIyYhtqPz31-UgaWOn1mM&q=13.3230,76.8568&zoom=12"
+    allowfullscreen>
+  </iframe>
 
 
   <div class="contactus_body">
@@ -27,26 +24,45 @@
       <div class="row no-gutters ">
         <div class="col-md-8">
           <div class="contact_form">
-            <form>
+
+            <p>{{mail_msg}}</p>
+
+            <form [formGroup]="contactform" (ngSubmit)="contactuspost()">
+
 
               <div class="form-group">
-                <input type="text" placeholder="Name" class="form-control" id="Name">
+                <input type="text" placeholder="Enter Name" class="form-control" formControlName="name"
+                  [ngClass]="{ 'is-invalid': name.errors }" required>
+
+                <div *ngIf="name.errors" class="invalid-feedback">
+                  <div *ngIf="name.errors.required">Name is required</div>
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+                <input type="text" placeholder="Email adress" class="form-control" formControlName="email"
+                  [ngClass]="{ 'is-invalid': email.errors }">
+
+                <div *ngIf=" email.errors" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                </div>
               </div>
 
               <div class="form-group">
-                <input type="text" placeholder="Email adress" class="form-control" id="emailadress">
+                <input type="text" placeholder="Subject" class="form-control" formControlName="subject">
               </div>
 
               <div class="form-group">
-                <input type="text" placeholder="Subject" class="form-control" id="Subject">
+                <textarea class="form-control" placeholder="Your message" rows="5" formControlName="message"></textarea>
               </div>
 
-              <div class="form-group">
-                <textarea class="form-control" placeholder="Your message" id="yourmessage" rows="5"></textarea>
-              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="!contactform.valid">Send Message</button>
 
-              <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
             </form>
+
           </div>
         </div>
         <div class="col-md-4">

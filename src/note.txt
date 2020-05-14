@@ -1,1 +1,16 @@
-https://github.com/4p-digital/new-staging-front-end-development-build.git
+git remote set-url origin https://github.com/4p-digital/new-staging-front-end-development-build.git
+git remote set-url origin
+
+git config user.email "ashwini@thinkahoy.com"
+git config user.name "4p-digital"
+
+
+http://new-frontend-thinkahoy.s3-website-us-west-2.amazonaws.com
+
+
+ng build --base-href=/http://new-frontend-thinkahoy.s3-website-us-west-2.amazonaws.com/
+
+https://new-frontend-thinkahoy.s3-us-west-2.amazonaws.com/thinkahoy/index.html
+
+
+https://new-frontend-thinkahoy.s3-us-west-2.amazonaws.com/thinkahoy/runtime-es2015.js
